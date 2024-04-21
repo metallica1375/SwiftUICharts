@@ -178,6 +178,10 @@ public protocol CTDataPointBaseProtocol: Hashable, Identifiable {
      */
     var description: String? { get set }
     
+    var usdPrice: String? { get set }
+    
+    var tomanPrice: String { get set }
+    
     /**
      Date can be used for optionally performing additional calculations.
      */

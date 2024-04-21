@@ -151,7 +151,7 @@ public final class StackedBarChartData: CTMultiBarChartDataProtocol, GetDataProt
                     self.infoView.touchOverlayInfo = [dataSets.dataSets[superIndex].dataPoints[index]]
                     if let data = self.extraLineData,
                        let point = data.getDataPoint(touchLocation: touchLocation, chartSize: chartSize) {
-                        var dp = StackedBarDataPoint(value: point.value, description: point.pointDescription, group: GroupingData(title: data.legendTitle, colour: ColourStyle()))
+                        var dp = StackedBarDataPoint(value: point.value, description: point.pointDescription, group: GroupingData(title: data.legendTitle, colour: ColourStyle()), tomanPrice: "")
                         dp.legendTag = data.legendTitle
                         self.infoView.touchOverlayInfo.append(dp)
                     }

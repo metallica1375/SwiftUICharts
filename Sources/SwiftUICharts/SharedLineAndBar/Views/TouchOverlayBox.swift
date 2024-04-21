@@ -27,16 +27,25 @@ internal struct TouchOverlayBox<T: CTChartData>: View {
     internal var body: some View {
         Group {
             if chartData.chartStyle.infoBoxContentAlignment == .vertical {
-                VStack(alignment: .leading, spacing: 0) {
+                VStack(alignment: .center, spacing: 0) {
                     ForEach(chartData.infoView.touchOverlayInfo, id: \.id) { point in
                         chartData.infoDescription(info: point)
                             .font(chartData.chartStyle.infoBoxDescriptionFont)
                             .foregroundColor(chartData.chartStyle.infoBoxDescriptionColour)
-                        chartData.infoValueUnit(info: point)
+                        Rectangle()
+                            .fill(chartData.chartStyle.infoBoxDescriptionColour)
+                            .frame(width: boxFrame.width / 1.2)
+                            .frame(height: 1)
+                            .padding(.vertical, 2)
+                        chartData.infoTomanPrice(info: point)
                             .font(chartData.chartStyle.infoBoxValueFont)
-                            .foregroundColor(chartData.chartStyle.infoBoxValueColour)
-                        chartData.infoLegend(info: point)
                             .foregroundColor(chartData.chartStyle.infoBoxDescriptionColour)
+                        chartData.infoUsdPrice(info: point)
+                            .font(chartData.chartStyle.infoBoxDescriptionFont)
+                            .foregroundColor(chartData.chartStyle.infoBoxValueColour)
+//                        chartData.infoLegend(info: point)
+//                            .foregroundColor(chartData.chartStyle.infoBoxDescriptionColour)
+                            
                     }
                 }
             } else {
@@ -59,10 +68,10 @@ internal struct TouchOverlayBox<T: CTChartData>: View {
         .background(
             GeometryReader { geo in
                 if chartData.infoView.isTouchCurrent {
-                    RoundedRectangle(cornerRadius: 5.0, style: .continuous)
+                    RoundedRectangle(cornerRadius: 8.0, style: .continuous)
                         .fill(chartData.chartStyle.infoBoxBackgroundColour)
                         .overlay(
-                            RoundedRectangle(cornerRadius: 5.0, style: .continuous)
+                            RoundedRectangle(cornerRadius: 8.0, style: .continuous)
                                 .stroke(chartData.chartStyle.infoBoxBorderColour, style: chartData.chartStyle.infoBoxBorderStyle)
                         )
                         .onAppear {

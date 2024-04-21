@@ -11,6 +11,9 @@ import SwiftUI
  Data for a single segement of a pie chart.
  */
 public struct PieChartDataPoint: CTPieDataPoint {
+    public var tomanPrice: String
+    
+    public var usdPrice: String?
     
     public var id: UUID = UUID()
     public var value: Double
@@ -34,13 +37,15 @@ public struct PieChartDataPoint: CTPieDataPoint {
         description: String? = nil,
         date: Date? = nil,
         colour: Color = Color.red,
-        label: OverlayType = .none
+        label: OverlayType = .none,
+        tomanPrice: String
     ) {
         self.value = value
         self.description = description
         self.date = date
         self.colour = colour
         self.label = label
+        self.tomanPrice = tomanPrice
     }
 }
 

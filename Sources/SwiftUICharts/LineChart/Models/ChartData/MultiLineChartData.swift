@@ -198,7 +198,7 @@ extension MultiLineChartData {
             if index >= 0 && index < dataSets.dataSets[setIndex].dataPoints.count {
                 if let data = self.extraLineData,
                    let point = data.getDataPoint(touchLocation: touchLocation, chartSize: chartSize) {
-                    var dp = LineChartDataPoint(value: point.value, xAxisLabel: point.pointDescription, description: point.pointDescription)
+                    var dp = LineChartDataPoint(value: point.value, xAxisLabel: point.pointDescription, description: point.pointDescription, tomanPrice: "")
                     dp.legendTag = data.legendTitle
                     self.infoView.touchOverlayInfo.append(dp)
                 }

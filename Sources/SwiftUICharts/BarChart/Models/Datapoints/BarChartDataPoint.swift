@@ -13,6 +13,10 @@ import SwiftUI
  Colour can be solid or gradient.
  */
 public struct BarChartDataPoint: CTStandardBarDataPoint {
+    public var tomanPrice: String
+    
+    public var usdPrice: String?
+    
     
     public let id = UUID()
     public var value: Double
@@ -35,13 +39,15 @@ public struct BarChartDataPoint: CTStandardBarDataPoint {
         xAxisLabel: String? = nil,
         description: String? = nil,
         date: Date? = nil,
-        colour: ColourStyle = ColourStyle(colour: .red)
+        colour: ColourStyle = ColourStyle(colour: .red),
+        tomanPrice : String
     ) {
         self.value = value
         self.xAxisLabel = xAxisLabel
         self.description = description
         self.date = date
         self.colour = colour
+        self.tomanPrice = tomanPrice
     }
     
     public typealias ID = UUID

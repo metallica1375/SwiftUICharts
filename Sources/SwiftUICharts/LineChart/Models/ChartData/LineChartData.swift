@@ -192,7 +192,7 @@ extension LineChartData {
             }
             if let data = self.extraLineData,
                let point = data.getDataPoint(touchLocation: touchLocation, chartSize: chartSize) {
-                var dp = LineChartDataPoint(value: point.value, description: point.pointDescription)
+                var dp = LineChartDataPoint(value: point.value, description: point.pointDescription, tomanPrice: "")
                 dp.legendTag = data.legendTitle
                 self.infoView.touchOverlayInfo.append(dp)
             }

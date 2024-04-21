@@ -120,6 +120,19 @@ extension CTChartData {
         Text(LocalizedStringKey(info.wrappedDescription))
     }
     
+    public func infoTomanPrice(info: DataPoint) -> some View {
+        Text(info.tomanPrice)
+    }
+    
+    @ViewBuilder public func infoUsdPrice(info: DataPoint) -> some View {
+        if let usdPrice = info.usdPrice {
+            Text(usdPrice)
+        }
+        else {
+            EmptyView()
+        }
+    }
+    
     /**
      Displays the relevent Legend for the data point.
      

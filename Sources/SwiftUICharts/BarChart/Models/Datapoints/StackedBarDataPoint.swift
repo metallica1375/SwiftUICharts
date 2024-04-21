@@ -11,6 +11,10 @@ import SwiftUI
  Data for a single stacked chart data point.
  */
 public struct StackedBarDataPoint: CTMultiBarDataPoint {
+    public var tomanPrice: String
+    
+    public var usdPrice: String?
+    
     
     public let id: UUID = UUID()
     public var value: Double
@@ -30,12 +34,14 @@ public struct StackedBarDataPoint: CTMultiBarDataPoint {
         value: Double,
         description: String? = nil,
         date: Date? = nil,
-        group: GroupingData
+        group: GroupingData,
+        tomanPrice: String
     ) {
         self.value = value
         self.description = description
         self.date = date
         self.group = group
+        self.tomanPrice = tomanPrice
     }
     
     public typealias ID = UUID

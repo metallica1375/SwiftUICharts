@@ -11,6 +11,10 @@ import SwiftUI
  Data for a single ranged bar chart data point.
  */
 public struct RangedBarDataPoint: CTRangedBarDataPoint {
+    public var tomanPrice: String
+    
+    public var usdPrice: String?
+    
     
     public let id: UUID = UUID()
     public var upperValue: Double
@@ -38,7 +42,8 @@ public struct RangedBarDataPoint: CTRangedBarDataPoint {
         xAxisLabel: String? = nil,
         description: String? = nil,
         date: Date? = nil,
-        colour: ColourStyle = ColourStyle(colour: .red)
+        colour: ColourStyle = ColourStyle(colour: .red),
+        tomanPrice: String
     ) {
         self.upperValue = upperValue
         self.lowerValue = lowerValue
@@ -46,6 +51,7 @@ public struct RangedBarDataPoint: CTRangedBarDataPoint {
         self.description = description
         self.date = date
         self.colour = colour
+        self.tomanPrice = tomanPrice
     }
     
     public typealias ID = UUID

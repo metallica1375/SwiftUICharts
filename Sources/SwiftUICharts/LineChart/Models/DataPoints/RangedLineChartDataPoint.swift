@@ -11,6 +11,10 @@ import SwiftUI
  Data for a single ranged data point.
  */
 public struct RangedLineChartDataPoint: CTRangedLineDataPoint, IgnoreMe {
+    public var tomanPrice: String
+    
+    public var usdPrice: String?
+    
     
     public let id: UUID = UUID()
     public var value: Double
@@ -43,7 +47,8 @@ public struct RangedLineChartDataPoint: CTRangedLineDataPoint, IgnoreMe {
         xAxisLabel: String? = nil,
         description: String? = nil,
         date: Date? = nil,
-        pointColour: PointColour? = nil
+        pointColour: PointColour? = nil,
+        tomanPrice: String
     ) {
         self.value = value
         self.upperValue = upperValue
@@ -52,5 +57,6 @@ public struct RangedLineChartDataPoint: CTRangedLineDataPoint, IgnoreMe {
         self.description = description
         self.date = date
         self.pointColour = pointColour
+        self.tomanPrice = tomanPrice
     }
 }

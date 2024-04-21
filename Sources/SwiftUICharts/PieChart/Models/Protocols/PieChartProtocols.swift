@@ -52,6 +52,8 @@ public protocol CTPieDataPoint: CTStandardDataPointProtocol, CTnotRanged {
      Option to add overlays on top of the segment.
      */
     var label: OverlayType { get set }
+    
+    var usdPrice: String? { get set }
 }
 
 

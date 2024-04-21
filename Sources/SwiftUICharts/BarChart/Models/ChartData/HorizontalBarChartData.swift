@@ -179,7 +179,7 @@ public final class HorizontalBarChartData: CTHorizontalBarChartDataProtocol, Get
             self.infoView.touchOverlayInfo = [dataSets.dataPoints[index]]
             if let data = self.extraLineData,
                let point = data.getDataPoint(touchLocation: touchLocation, chartSize: chartSize) {
-                var dp = BarChartDataPoint(value: point.value, description: point.pointDescription)
+                var dp = BarChartDataPoint(value: point.value, description: point.pointDescription, tomanPrice: "")
                 dp.legendTag = data.legendTitle
                 self.infoView.touchOverlayInfo.append(dp)
             }
