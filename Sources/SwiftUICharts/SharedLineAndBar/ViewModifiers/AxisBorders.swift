@@ -68,7 +68,7 @@ internal struct YAxisBorder<T>: ViewModifier where T: CTLineBarChartDataProtocol
                 HStack {
                     ZStack(alignment: .leading) {
                         content
-                        Divider().if(chartData.chartStyle.yAxisBorderColour != nil) { $0.background(chartData.chartStyle.yAxisBorderColour) }
+//                        Divider().if(chartData.chartStyle.yAxisBorderColour != nil) { $0.background(chartData.chartStyle.yAxisBorderColour) }
                     }
                 }
             } else if labelsAndTrailing {
